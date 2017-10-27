@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="Service.js"></script>
+    <script src="Order.js"></script>
+    <link href="Order.css" rel="stylesheet" />
+    <title>New Order</title>
+</head>
+<body>
+    <div ng-controller="myCtrl">
+        <h1 style="text-align:center">
+            Create Order
+        </h1>
+        <div>
+            <div class="col-lg-12" style="background-color:#6495ED">
+                <div class="col-lg-2"><button class="tablink" name="manage" value="Manage" onclick="order('Manage', this)">Manage</button></div>
+                <div class="col-lg-2"><button class="tablink" name="create" value="Create" onclick="order('Create', this)">Create</button></div>
+                <div class="col-lg-2"></div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <select>
+                        <option>status</option>
+                        <option>order #</option>
+                        <option>order Date</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                    <div class="col-lg-8">
+                        <select>
+                            <option>order #</option>
+                            <option>order Date</option>
+                        </select>
+                    </div>
+                    <div class="dropdown pull-right col-lg-4" style="width:1px">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                            <p style="align-content:center;word-wrap:break-word;font-family:'Times New Roman', Times, serif;height:9px;transform:rotate(90deg);position:center">.&nbsp;.&nbsp;.</p>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="CreateOrder.html">Add</a></li>
+                            <li><a href="#">Edit</a></li>
+                            <li><a href="Order.html">Back</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12" style="padding-top:15px">
+            <div class="col-lg-4">
+                Order # : <input type="text" ng-model="order#" />
+            </div>
+            <div class="col-lg-4">
+                Order Date : <input type="date" ng-model="orderDate" />
+            </div>
+            <div class="col-lg-4">
+                Order Content : <input type="datetime" ng-model="orderContent" />
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-4"><input type="submit" value="Submit" /></div>
+            <div class="col-lg-4"><input type="reset" value="Reset" ng-click="reset()" /></div>
+            <div class="col-lg-4"><input type="button" value="Close" ng-click="close()" /></div>
+        </div>
+    </div>
+</body>
+</html>
