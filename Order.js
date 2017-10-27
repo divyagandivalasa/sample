@@ -98,32 +98,3 @@ window.onclick = function (event) {
         }
     }
 }
-
-
-app.controller('myCtrl', ["$scope", "$rootScope", "$location", function ($scope, $rootScope, $location, $stateParams) {
-    $scope.orders = [];
-    $scope.orderContents = [];
-    $scope.orderDates = [];
-    $scope.orders = ["Order1", "Order2", "Order3"];
-    $scope.orderContents = ["Delivered Order", "Order in process", "Shipped Order"];
-    $scope.orderDates = [finalDate, finalDate, finalDate];
-
-    $scope.orderDetails = [
-    { "orderNo": "Order1", "orderDate": finalDate, "orderContent": "Delivered Order" },
-    { "orderNo": "Order2", "orderDate": finalDate + 1, "orderContent": "Order in progress" },
-    { "orderNo": "Order3", "orderDate": finalDate + 2, "orderContent": "Shipped Order" }
-    ];
-
-    function reset() {
-        location.reload();
-    }
-    function close() {
-        $window.location.href = "Order.html";
-    }
-
-
-    $scope.close = function () {
-        $location.path('/order');
-    }
-
-}]);

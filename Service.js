@@ -1,19 +1,30 @@
-﻿var app = angular.module('myApp', []);
+﻿var app = angular.module('myApp', ["ngRoute"]);
+// var app = angular.module('myApp', ["ngRoute"]);
+// app.config(function ($routeProvider) {
+//     $routeProvider
+//         .when("/Order", {
+//             templateUrl: "Order.html",
+//             controller: "myCtrl"
+//         });
+// });
+app.controller('myCtrl', function ($scope) {
+    $scope.orders = [];
+    $scope.orderContents = [];
+    $scope.orderDates = [];
+    $scope.orders = ["Order1", "Order2", "Order3"];
+    $scope.orderContents = ["Delivered Order", "Order in process", "Shipped Order"];
+    $scope.orderDates = [finalDate, finalDate, finalDate];
 
-//app.config(function ($stateProvider, $urlRouterProvider) {
+    $scope.orderDetails = [
+    { "orderNo": "Order1", "orderDate": finalDate, "orderContent": "Delivered Order" },
+    { "orderNo": "Order2", "orderDate": finalDate + 1, "orderContent": "Order in progress" },
+    { "orderNo": "Order3", "orderDate": finalDate + 2, "orderContent": "Shipped Order" }
+    ];
 
-//    // For any unmatched url, send to /index
-//    $urlRouterProvider.otherwise("/login");
-
-//    $stateProvider
-//      .state('Order', {
-//          url: "/Order",
-//          templateUrl: "Order.html",
-//          controller: "myCtrl"
-//      })
-//      .state('CreateOrder', {
-//          url: "/CreateOrder",
-//          templateUrl: "CreateOrder.html",
-//          controller: "myCtrl"
-//      });
-//});
+    function reset() {
+        location.reload();
+    }
+    $scope.close = function(){
+        window.location = "Order.html";
+    }
+});
